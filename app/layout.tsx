@@ -3,7 +3,10 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Nav from './auth/nav'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ 
+  subsets: ['latin'], 
+weight:["400","700"],
+variable:"--font-inter" })
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -17,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`mx-4 md:mx-48 xl:mx-96 ${inter.variable} bg-gray-200`}>
         <Nav/>
         {children}
         </body>
